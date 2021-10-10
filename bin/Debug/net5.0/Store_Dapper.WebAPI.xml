@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Store_Dapper.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AddressController.Get">
+            <summary>
+            List all adresses on Database.
+            </summary>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Resquest: Exception catched</response>
+            <response code = '404'>Not found: Adresses not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AddressController.Get(System.Int64)">
+            <summary>
+            Find address from cep 
+            </summary>
+            <remarks>
+            Example:
+                cep = 62031020
+            </remarks>
+            <param name="cep">Cep</param>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '404'>Not found: Address of this cep not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AddressController.Post(System.Int64)">
+            <summary>
+            Create a new Address based on cep
+            </summary>
+            <remarks>
+            Example:
+            
+                cep: 62031100
+               
+            </remarks>
+            <response code = '201'> Successfully Created</response>
+            <response code = '404'>Not found: Cep not found on ViaCep API</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <param name="cep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AddressController.Put(System.Int64,System.Int64)">
+             <summary>
+             Update an address by cep
+             </summary>
+             <remarks>
+             Example:
+            
+                 PUT 
+                     oCep = 60010010 --old cep
+                     nCep = 47804112 -- new cep 
+                 
+             </remarks>
+             <param name="oCep">Cep that will be modified</param>
+             <param name="nCep">Cep that that will be put in</param>
+             <response code = '204'>No Content: Cep updated</response>
+             <response code = '400'> Bad Request: Read the message </response>
+             <returns>Client updated</returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AddressController.Delete(System.Int64)">
+            <summary>
+            Delete cep 
+            </summary>
+            <remarks>
+            Example:
+               
+                DELETE
+                    cep = 62031064
+            
+            </remarks>
+            <param name="cep">Cep to be deleted</param>
+            <response code = '204'>No Content: Cep deleted</response>
+            <response code = '400'>Bad Request: Read the message</response>
+            <response code = '404'>Not found: Cep not found to be deleted</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.AdminControllers.Get(System.String,System.String)">
+            <summary>
+            Generate a token for Admin
+            </summary>
+            <remarks>
+            Example:
+            
+                name = Gisely
+                password = 123xl
+                
+            </remarks>
+            <param name="name"></param>
+            <param name="password"></param>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '404'>Not found: Admin not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.ClientController.Get">
+            <summary>
+            List all clients on database.
+            </summary>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Resquest: Exception catched</response>
+            <response code = '404'>Not found: Clients not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.ClientController.Get(System.Int32)">
+            <summary>
+            Show a client by Id
+            </summary>
+            <remarks>
+            Example:
+                Id = 1005
+            </remarks>
+            <param name="id">Client Id</param>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '404'>Not found: Client of this Id not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.ClientController.Post(Store_Dapper.WebAPI.Models.ClientDb)">
+             <summary>
+             Create a new client.
+             </summary>
+             <remarks>
+             Example:
+            
+                 POST 
+                 {
+                    "name": "Gisely",
+                    "contact": "88996464849",
+                    "cep": "62031-222"
+                  } 
+             </remarks>
+             <param name="client">Client to be created</param>
+             <response code = '201'>Success</response>
+             <response code = '400'>Bad Request: Read the message</response>
+             <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.ClientController.Put(Store_Dapper.WebAPI.Models.ClientDb)">
+             <summary>
+             Update client
+             </summary>
+             <remarks>
+             Example:
+            
+                 PUT
+                 {  
+                    "id": 2010
+                    "name": "GISELY",
+                    "contact": "88996464849",
+                    "cep": "60010-040"
+                  } 
+             </remarks>
+             
+             <param name="client"> Client body to Update</param>
+             <response code = '200'> Succes</response>
+             <response code = '400'> Bad Request: Exception catched </response>
+             <response code = '404'> Not found: Client Id not found</response>
+             <returns>Client updated</returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.ClientController.Delete(System.Int32)">
+            <summary>
+            Delete client by id
+            </summary>
+            <param name="id"> to Delete</param>
+            <response code = '204'>Succes</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '404'>Not found: Client not found to delete</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.FilmController.Get">
+            <summary>
+            List all movies on database
+            </summary>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '404'>Not found: Movies not found</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.FilmController.Get(System.Int32)">
+            <summary>
+            Show a movie by Id
+            </summary>
+            <remarks>
+            
+            EXAMPLE:
+                    id = 2
+            
+            </remarks>
+            <response code = '200'>Success</response>
+            <response code = '400'>BadRequest: Exception catched</response>
+            <response code = '404'>Not found</response>
+            <param name="id">Film Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.FilmController.Post(Store_Dapper.WebAPI.Models.Film)">
+            <summary>
+            Create a new film
+            </summary>
+            <remarks>
+                Example:
+                
+                    POST
+                        {
+                            "id":"1",
+                            "title":"FROZEN",
+                            "direction": "Jennifer Lee",
+                            "year": 2019
+                        }
+            </remarks>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Read the message</response>
+            <param name="film"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.FilmController.Put(Store_Dapper.WebAPI.Models.Film)">
+            <summary>
+            Update film
+            </summary>
+            <remarks>
+                Example:
+                
+                    PUT
+                        {
+                            "id":"1",
+                            "title":"new film",
+                            "direction": "director",
+                            "year": 2000
+                        }
+            </remarks>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Read the message</response>
+            <response code = '404'> Not found: Film not found to be updated</response>
+            <param name="film">Film Updates</param>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.FilmController.Delete(System.Int32)">
+            <summary>
+            Delete film by Id
+            </summary>
+            <remarks>
+            Example:
+                    Id = 2 
+            </remarks>
+            <response code = '204'>Success in Delete</response>
+            <response code = '400'>BadRequest: Exception catched</response>
+            <reponse code = '404'>Not found: Film not found to be deleted</reponse>
+            <param name="id">Film Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.LocationController.Get">
+            <summary>
+            List all locations on database
+            </summary>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '401'>Unauthorized: Token necessary</response>
+            <response code = '404'>Not found: Locations table empty</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.LocationController.Get(System.Int32)">
+            <summary>
+            Show a location by Id
+            </summary>
+            <remarks>
+                
+                Example:
+                
+                    Id = 6
+                    
+            </remarks>   
+            <param name="id">Location Id</param>
+            <response code = '200'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '401'>Unauthorized: Token necessary</response>
+            <response code = '404'>Not found: location</response>
+            <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.LocationController.Post(Store_Dapper.WebAPI.Models.LocationDb)">
+             <summary>
+             Create a new location
+             </summary>
+             <remarks>
+             Example:
+            
+                   POST
+                     {
+                        "id": 0,
+                        "clientId": 1003,
+                        "filmId": 5,
+                        "loanDate": "2021-10-10T00:05:06.851Z",
+                        "returnDate": "2021-10-10T00:05:06.851Z"
+                    }
+             
+            </remarks>
+            <response code = '201'>Success</response>
+            <response code = '400'>Bad Request: Read message</response>
+            <response code = '401'>Unauthorized: Token necessary</response>
+             <param name="location">Location to be created</param>
+             <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.LocationController.Put(Store_Dapper.WebAPI.Models.LocationDb)">
+             <summary>
+             Update location
+             </summary>
+             <remarks>
+             Example:
+            
+                   PUT
+                     {
+                        "id": 1,         
+                        "clientId": 1003, 
+                        "filmId": 5,
+                        "loanDate": "2021-10-10T00:05:06.851Z",
+                        "returnDate": "2021-10-10T00:05:06.851Z"
+                    }
+                    
+             </remarks>
+             <response code = '201'>Success</response>
+             <response code = '400'>Bad Request: Exception catched</response>
+             <response code = '401'>Unauthorized: Token necessary</response>
+             <response code = '404'>Not found: Location to updated</response>
+             <param name="location"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Store_Dapper.WebAPI.Controllers.LocationController.Delete(System.Int32)">
+            <summary>
+            Delete location by id
+            </summary>
+            <remarks>
+            Example:
+                
+                Id = 6
+                
+            </remarks>
+            <response code = '204'>Success</response>
+            <response code = '400'>Bad Request: Exception catched</response>
+            <response code = '401'>Unauthorized: Token necessary</response>
+            <response code = '404'>Not found: Location to delete</response>
+            <param name="id">Location Id</param>
+        </member>
+    </members>
+</doc>

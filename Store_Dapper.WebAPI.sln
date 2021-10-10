@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store_Dapper.WebAPI", "Store_Dapper.WebAPI.csproj", "{1AAB3BE3-F845-4C2C-8575-FFE04E636A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AAB3BE3-F845-4C2C-8575-FFE04E636A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAB3BE3-F845-4C2C-8575-FFE04E636A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAB3BE3-F845-4C2C-8575-FFE04E636A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAB3BE3-F845-4C2C-8575-FFE04E636A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EA9F051-190E-4025-B6EA-FD826A5552F6}
+	EndGlobalSection
+EndGlobal
